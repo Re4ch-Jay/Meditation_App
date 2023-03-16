@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meditation_app/pages/dashboard.dart';
-import '../utils.dart';
+import 'package:meditation_app/widgets/rectangle_button.dart';
+import '../utils/utils.dart';
 
 class Home extends StatelessWidget {
   const Home({
@@ -17,7 +18,7 @@ class Home extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Image.asset("images/meditation.png"),
+              Image.asset("assets/images/meditation.png"),
               const Text(
                 "Time to meditate",
                 style: kLargeTextStyle,
@@ -34,22 +35,15 @@ class Home extends StatelessWidget {
               const SizedBox(
                 height: 50,
               ),
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: ElevatedButton(
-                  onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const Dashboard(),
-                      )),
-                  child: const Text(
-                    "Let's get started",
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.black,
-                      letterSpacing: 1.5,
-                    ),
-                  ),
+              RectangleButton(
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Dashboard(),
+                    )),
+                child: const Text(
+                  "Let's get started",
+                  style: kButtonTextStyle,
                 ),
               )
             ],

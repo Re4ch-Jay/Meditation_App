@@ -17,7 +17,7 @@ class MeditationCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
-      onPressed: null,
+      onPressed: onPressed,
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25),
@@ -29,7 +29,7 @@ class MeditationCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Image.asset(
-                  'images/$image',
+                  'assets/images/$image',
                   width: 80,
                   height: 80,
                 ),

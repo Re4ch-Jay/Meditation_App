@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:meditation_app/pages/songboard.dart';
 import '../widgets/meditation_card.dart';
-import '../utils.dart';
+import '../utils/utils.dart';
+import '../utils/assets.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
@@ -20,6 +22,7 @@ class Dashboard extends StatelessWidget {
                     child: const Icon(
                       Icons.arrow_back,
                       size: 30,
+                      color: Colors.deepPurple,
                     ),
                     onTap: () => Navigator.pop(context),
                   ),
@@ -41,42 +44,108 @@ class Dashboard extends StatelessWidget {
                   crossAxisCount: 2,
                   mainAxisSpacing: 20,
                   crossAxisSpacing: 30,
-                  children: const [
+                  children: [
                     MeditationCard(
-                      title: 'Meditate',
-                      description: 'Breath',
-                      image: 'meditation.png',
-                      onPressed: null,
+                      title: kMeditateTitle,
+                      description: kMeditateSubtitle,
+                      image: kMeditateImageSource,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SongBoard(
+                              musicName: kMeditateTitle,
+                              imageSource: kMeditateImageSource,
+                              musicSource: kMeditateMusicSource,
+                            ),
+                          ),
+                        );
+                      },
                     ),
                     MeditationCard(
-                      title: 'Relax',
-                      description: 'Read book',
-                      image: 'relax.png',
-                      onPressed: null,
+                      title: kRelaxTitle,
+                      description: kRelaxSubtitle,
+                      image: kRelaxImageSource,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SongBoard(
+                              musicName: kRelaxTitle,
+                              imageSource: kRelaxImageSource,
+                              musicSource: kRelaxMusicSource,
+                            ),
+                          ),
+                        );
+                      },
                     ),
                     MeditationCard(
-                      title: 'Focus',
-                      description: 'Goals',
-                      image: 'focus.png',
-                      onPressed: null,
+                      title: kBrainTitle,
+                      description: kBrainSubtitle,
+                      image: kBrainImageSource,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SongBoard(
+                              musicName: kBrainTitle,
+                              imageSource: kBrainImageSource,
+                              musicSource: kBrainMusicSource,
+                            ),
+                          ),
+                        );
+                      },
                     ),
                     MeditationCard(
-                      title: 'Study',
-                      description: 'Learn sth',
-                      image: 'study.png',
-                      onPressed: null,
+                      title: kStudyTitle,
+                      description: kStudySubtitle,
+                      image: kStudyImageSource,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SongBoard(
+                              musicName: kStudyTitle,
+                              imageSource: kStudyImageSource,
+                              musicSource: kStudyMusicSource,
+                            ),
+                          ),
+                        );
+                      },
                     ),
                     MeditationCard(
-                      title: 'Sleep',
-                      description: 'Good night',
-                      image: 'sleep.png',
-                      onPressed: null,
+                      title: kSleepTitle,
+                      description: kSleepSubtitle,
+                      image: kSleepImageSource,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SongBoard(
+                              musicName: kSleepTitle,
+                              imageSource: kSleepImageSource,
+                              musicSource: kSleepMusicSource,
+                            ),
+                          ),
+                        );
+                      },
                     ),
                     MeditationCard(
-                      title: 'Brain',
-                      description: 'Power',
-                      image: 'brain.png',
-                      onPressed: null,
+                      title: kFocusTitle,
+                      description: kFocusSubtitle,
+                      image: kFocusImageSource,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SongBoard(
+                              musicName: kFocusTitle,
+                              imageSource: kFocusImageSource,
+                              musicSource: kFocusMusicSource,
+                            ),
+                          ),
+                        );
+                      },
                     ),
                   ],
                 ),
